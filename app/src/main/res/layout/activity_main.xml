@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_height="match_parent" android:layout_width="match_parent">
+    <TextView
+            android:id="@+id/txtContractName"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:text="Contract name: "
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/edtContractName"
+            android:gravity="center"/>
+    <EditText
+            android:id="@+id/edtContractName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="SGH123456"
+            app:layout_constraintStart_toEndOf="@id/txtContractName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+    <TextView
+            android:id="@+id/txtApiKey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="API Key:"
+            app:layout_constraintTop_toBottomOf="@id/txtContractName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/edtApiKey"/>
+    <EditText
+            android:id="@+id/edtApiKey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/edtContractName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edtContractName"
+            android:text="fbdd810b6c6951fc5662e87bac347e4f62d06263"/>
+    <TextView
+            android:id="@+id/txtInputStaff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mã nhân viên:"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toBottomOf="@id/edtApiKey"
+            app:layout_constraintStart_toStartOf="parent"/>
+    <EditText
+            android:id="@+id/edtInputStaff"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/txtInputStaff"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edtApiKey"
+            android:text="AA"/>
+    <Button
+            android:id="@+id/btnAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Thêm vào danh sách"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edtInputStaff"/>
+    <android.support.v7.widget.RecyclerView
+            android:id="@+id/rcvListStaff"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/btnAdd"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/btnStart"/>
+    <Button
+            android:id="@+id/btnStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bắt đầu"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+</android.support.constraint.ConstraintLayout>

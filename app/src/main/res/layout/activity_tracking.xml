@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Activity.TrackingActivity">
+    <TextView
+            android:id="@+id/txtInputIdTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nhập mã nhân viên"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:textSize="15sp"/>
+    <EditText
+            android:id="@+id/edtInput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtInputIdTitle"
+            android:text="001234"/>
+    <Button
+            android:id="@+id/btnAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Thêm"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edtInput"/>
+    <android.support.v7.widget.RecyclerView
+            android:id="@+id/rcvListId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnAdd"/>
+    <Button
+            android:id="@+id/btnSend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gửi mảng nhân viên"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rcvListId"/>
+    <TextView
+            android:id="@+id/txtLatTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lat: "
+            app:layout_constraintTop_toBottomOf="@id/btnSend"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textSize="15sp"/>
+    <TextView
+            android:id="@+id/txtLat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/btnSend"
+            app:layout_constraintStart_toEndOf="@id/txtLatTitle"
+            android:textSize="15sp"/>
+    <TextView
+            android:id="@+id/txtLangTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lang: "
+            app:layout_constraintTop_toBottomOf="@id/txtLatTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textSize="15sp"/>
+    <TextView
+            android:id="@+id/txtLang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/txtLatTitle"
+            app:layout_constraintStart_toEndOf="@id/txtLangTitle"
+            android:textSize="15sp"/>
+</android.support.constraint.ConstraintLayout>
