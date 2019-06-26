@@ -5,14 +5,16 @@ import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.view.View
 import android.widget.Toast
+import com.example.Utils.CallToAction
 import com.example.nhtu.demochat.Adapter.StaffIdAdapter
 import com.example.nhtu.demochat.Api.ApiService
 import com.example.nhtu.demochat.Base.BaseActivity
 import com.example.nhtu.demochat.Model.GetSessionInput
 import com.example.nhtu.demochat.Model.GetSessionOutput
 import com.example.nhtu.demochat.Model.SocketExpire
+import com.example.nhtu.demochat.Parameter.Parameter
 import com.example.nhtu.demochat.R
-import io.socket.client.Socket
+import com.github.nkzawa.socketio.client.Socket
 import kotlinx.android.synthetic.main.activity_main.*
 import retrofit2.Call
 import retrofit2.Response
@@ -31,11 +33,10 @@ class MainActivity : BaseActivity(), View.OnClickListener {
     var apiKey="fbdd810b6c6951fc5662e87bac347e4f62d06263"
     var from="2019-06-07T00:00:00.000Z"
     var to="2019-05-08T12:59:59.000Z"
-    var employeeID1="AA"
-    var employeeID2="BB"
     var listStaffId=ArrayList<String>()
 
     private var staffIdAdapter:StaffIdAdapter?=null
+    private var actionFromChild: CallToAction? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -46,9 +47,33 @@ class MainActivity : BaseActivity(), View.OnClickListener {
     }
 
     private fun initValue() {
-        staffIdAdapter= StaffIdAdapter(this,listStaffId)
+        staffIdAdapter= StaffIdAdapter(this,actionFromChild,listStaffId)
         rcvListStaff?.adapter=staffIdAdapter
         rcvListStaff?.layoutManager=LinearLayoutManager(applicationContext,LinearLayoutManager.VERTICAL,false)
+        initListId()
+
+        actionFromChild = object : CallToAction {
+            override fun action(bundle: Bundle) {
+                if (bundle == null) return
+                var positon=bundle.getInt(Parameter.BundleParam.position)
+               updateListId(positon)
+            }
+
+        }
+    }
+
+    private fun updateListId(positon: Int) {
+        listStaffId.removeAt(positon)
+        staffIdAdapter= StaffIdAdapter(this,actionFromChild,listStaffId)
+        staffIdAdapter?.notifyDataSetChanged()
+    }
+
+    private fun initListId() {
+        listStaffId.add("00095")
+        listStaffId.add("00108231")
+        listStaffId.add("000138805")
+        listStaffId.add("00076504")
+        listStaffId.add("00008461")
     }
 
     private fun initListener() {

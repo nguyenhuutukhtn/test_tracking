@@ -8,7 +8,7 @@ class GetSessionInput{
     @SerializedName("api_key")
     var apiKey:String=""
     @SerializedName("socket_expire")
-    var socketExpire: SocketExpire?=null
+    var socketExpire=SocketExpire()
     @SerializedName("tracking")
-    var tracking:ArrayList<String>?=null
+    var tracking=ArrayList<String>()
 }

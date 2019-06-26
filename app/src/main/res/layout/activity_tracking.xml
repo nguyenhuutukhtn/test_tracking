@@ -47,33 +47,64 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/rcvListId"/>
     <TextView
-            android:id="@+id/txtLatTitle"
+            android:id="@+id/txtLacationTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Lat: "
+            android:text="Location: "
             app:layout_constraintTop_toBottomOf="@id/btnSend"
             app:layout_constraintStart_toStartOf="parent"
             android:textSize="15sp"/>
     <TextView
-            android:id="@+id/txtLat"
+            android:id="@+id/txtLocation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@id/btnSend"
-            app:layout_constraintStart_toEndOf="@id/txtLatTitle"
+            app:layout_constraintStart_toEndOf="@id/txtLacationTitle"
             android:textSize="15sp"/>
     <TextView
-            android:id="@+id/txtLangTitle"
+            android:id="@+id/txtUserTrackingTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Lang: "
-            app:layout_constraintTop_toBottomOf="@id/txtLatTitle"
+            android:text="UserTracking: "
+            app:layout_constraintTop_toBottomOf="@id/txtLacationTitle"
             app:layout_constraintStart_toStartOf="parent"
             android:textSize="15sp"/>
     <TextView
-            android:id="@+id/txtLang"
+            android:id="@+id/txtUserTracking"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/txtLatTitle"
-            app:layout_constraintStart_toEndOf="@id/txtLangTitle"
+            app:layout_constraintTop_toBottomOf="@id/txtLacationTitle"
+            app:layout_constraintStart_toEndOf="@id/txtUserTrackingTitle"
             android:textSize="15sp"/>
+    <TextView
+            android:id="@+id/txtIdTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="IdNV: "
+            app:layout_constraintTop_toBottomOf="@id/txtUserTrackingTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textSize="15sp"/>
+    <TextView
+            android:id="@+id/txtId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/txtUserTrackingTitle"
+            app:layout_constraintStart_toEndOf="@id/txtIdTitle"
+            android:textSize="15sp"/>
+    <TextView
+            android:id="@+id/txtDevieTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="IdDevice: "
+            app:layout_constraintTop_toBottomOf="@id/txtId"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textSize="15sp"/>
+    <TextView
+            android:id="@+id/txtDevice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/txtIdTitle"
+            app:layout_constraintStart_toEndOf="@id/txtDevieTitle"
+            android:textSize="15sp"/>
+
 </android.support.constraint.ConstraintLayout>
